@@ -31,7 +31,6 @@ namespace Nestedgrid_rows_and_columns
             gridControl.Model.QueryCellInfo += Model_QueryCellInfo;
             GridCellNestedGridModel gridModel = new GridCellNestedGridModel(GridNestedAxisLayout.Normal, GridNestedAxisLayout.Normal);
             gridControl.Model.CellModels.Add("ScrollGrid", gridModel);
-            gridControl.CoveredCells.Add(new CoveredCellInfo(3, 2, 5, 4));
             gridControl.Model[3, 2].CellType = "ScrollGrid";
             for (int i = 0; i < gridControl.Model.RowCount; i++)
             {
@@ -63,6 +62,7 @@ namespace Nestedgrid_rows_and_columns
                 }
             }
             gridControl.Model[3, 2].CellValue = model;
+            gridControl.CoveredCells.Add(new CoveredCellInfo(3, 2, 5, 4));
         }
 
         private void Model_QueryCellInfo(object sender, GridQueryCellInfoEventArgs e)

@@ -31,10 +31,10 @@ namespace Nestedgrid_row_layout
             gridControl.Model.CellModels.Add("ScrollGrid", shareRow);
             gridControl.Model.HeaderStyle.Borders.All = new Pen(Brushes.LightGray, 1);
      
-            gridControl.Model.RowCount = 100;
+            gridControl.Model.RowCount = 200;
             gridControl.Model.ColumnCount = 12;
-            gridControl.Model[1, 2].CellType = "ScrollGrid";
-            gridControl.Model[1, 2].Background = SystemColors.InactiveCaptionBrush;
+            gridControl.Model[2, 2].CellType = "ScrollGrid";
+            gridControl.Model[2, 2].Background = SystemColors.InactiveCaptionBrush;
 
             for (int i = 0; i < gridControl.Model.RowCount; i++)
             {
@@ -45,8 +45,8 @@ namespace Nestedgrid_row_layout
             }
             
             GridModel nestedGridWithSharedRowsModel = GetNestedGridWithSharedRowsModel();
-            gridControl.Model[1, 2].CellValue = nestedGridWithSharedRowsModel;
-            gridControl.CoveredCells.Add(new CoveredCellInfo(1, 2, 1 + nestedGridWithSharedRowsModel.RowCount - 1, 9));
+            gridControl.Model[2, 2].CellValue = nestedGridWithSharedRowsModel;
+            gridControl.CoveredCells.Add(new CoveredCellInfo(2, 2, 2 + nestedGridWithSharedRowsModel.RowCount - 1, 9));
         }
 
         private GridModel GetNestedGridWithSharedRowsModel()
@@ -60,7 +60,7 @@ namespace Nestedgrid_row_layout
             model.ColumnCount = 13;
             model.RowHeights.HeaderLineCount = 1;
             model.RowHeights.FooterLineCount = 1;
-            model.RowCount = 13;
+            model.RowCount = 151;
 
             Color clr = Color.FromArgb(128, 0, 0, 0);
             Brush headerBrush = new SolidColorBrush(clr);
@@ -100,18 +100,18 @@ namespace Nestedgrid_row_layout
                 }
             }
             
-            model[2, 2].CellType = "ScrollGrid";
-            model[2, 2].BorderMargins.Top = 0;
-            model[2, 2].BorderMargins.Left = 0;
-            model[2, 2].BorderMargins.Right = 0;
-            model[2, 2].BorderMargins.Bottom = 0;
-            model[2, 2].Background = SystemColors.InactiveCaptionBrush;
+            model[5, 2].CellType = "ScrollGrid";
+            model[5, 2].BorderMargins.Top = 0;
+            model[5, 2].BorderMargins.Left = 0;
+            model[5, 2].BorderMargins.Right = 0;
+            model[5, 2].BorderMargins.Bottom = 0;
+            model[5, 2].Background = SystemColors.InactiveCaptionBrush;
             model.SelectedCells = GridRangeInfo.Empty;
 
             // Creates a nested grid for second level.
             GridModel nestedGridWithSharedRowsModel = GetSecondNestedGridWithSharedRowsModel();
-            model[2, 2].CellValue = nestedGridWithSharedRowsModel;
-            model.CoveredCells.Add(new CoveredCellInfo(2, 2, 2 + nestedGridWithSharedRowsModel.RowCount - 1, 7));
+            model[5, 2].CellValue = nestedGridWithSharedRowsModel;
+            model.CoveredCells.Add(new CoveredCellInfo(5, 2, 5 + nestedGridWithSharedRowsModel.RowCount - 1, 7));
 
             return model;
         }
@@ -125,10 +125,10 @@ namespace Nestedgrid_row_layout
             model.Options.AllowSelection = GridSelectionFlags.Cell;
             model.ColumnWidths.DefaultLineSize = 40;
             model.ColumnWidths.HeaderLineCount = 1;
-            model.ColumnCount = 10;
+            model.ColumnCount = 8;
             model.RowHeights.HeaderLineCount = 1;
             model.RowHeights.FooterLineCount = 1;
-            model.RowCount = 10;
+            model.RowCount = 121;
 
             Color clr = Color.FromArgb(128, 0, 0, 128);
             Brush headerBrush = new SolidColorBrush(clr);
@@ -167,18 +167,18 @@ namespace Nestedgrid_row_layout
                     }           
                 }
             }
-            model[2, 2].CellType = "ScrollGrid";
-            model[2, 2].BorderMargins.Top = 0;
-            model[2, 2].BorderMargins.Left = 0;
-            model[2, 2].BorderMargins.Right = 0;
-            model[2, 2].BorderMargins.Bottom = 0;
-            model[2, 2].Background = Brushes.Wheat;
+            model[4, 2].CellType = "ScrollGrid";
+            model[4, 2].BorderMargins.Top = 0;
+            model[4, 2].BorderMargins.Left = 0;
+            model[4, 2].BorderMargins.Right = 0;
+            model[4, 2].BorderMargins.Bottom = 0;
+            model[4, 2].Background = Brushes.Wheat;
             model.SelectedCells = GridRangeInfo.Empty;
 
             //Creates a nested grid for third level.
             GridModel nestedGridWithSharedRowsModel = GetThirdNestedGridWithSharedRowsModel();
-            model[2, 2].CellValue = nestedGridWithSharedRowsModel;
-            model.CoveredCells.Add(new CoveredCellInfo(2, 2, 2 + nestedGridWithSharedRowsModel.RowCount - 1, 5));
+            model[4, 2].CellValue = nestedGridWithSharedRowsModel;
+            model.CoveredCells.Add(new CoveredCellInfo(4, 2, 4 + nestedGridWithSharedRowsModel.RowCount - 1, 5));
 
             return model;
         }
@@ -192,10 +192,10 @@ namespace Nestedgrid_row_layout
             model.Options.AllowSelection = GridSelectionFlags.Cell;
             model.ColumnWidths.DefaultLineSize = 35;
             model.ColumnWidths.HeaderLineCount = 1;
-            model.ColumnCount = 6;
+            model.ColumnCount = 5;
             model.RowHeights.HeaderLineCount = 1;
             model.RowHeights.FooterLineCount = 1;
-            model.RowCount = 7;
+            model.RowCount = 31;
 
             Color clr = Color.FromArgb(128, 0, 128, 128);
             Brush headerBrush = new SolidColorBrush(clr);
